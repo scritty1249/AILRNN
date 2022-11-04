@@ -18,8 +18,6 @@ os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' # 2: filters INFO and WARN messages, 3: Filter all messages
 from deepspeech import Model
 
-# Define ffmpeg path (pydub cant find it)
-#audio.converter = "C:\\Users\\kaiso\\Desktop\\Porn\\Tools\\ffmpeg\\bin\\ffmpeg.exe"
 
 # Deepspeech lanugage model constants (specified in https://github.com/mozilla/DeepSpeech/releases)
 lang_model = {"alpha": 0.931289039105002, "beta": 1.1834137581510284}
