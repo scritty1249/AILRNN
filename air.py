@@ -51,9 +51,8 @@ def test_callback(total_complete, total_length):
     else:
         print("\r%s / %s" % (total_complete, total_length), end="", flush=True)
 
-mediaName = "Jordan-Peterson-sample"
-scene_cuts = False # seperate scenes by cuts or rolling frame changes
-interval = 8 * 1000 # supposed to be in milliseconds, 8000 seems optimal
+mediaName = "sample"
+interval = 8 * 1000 # in milliseconds, 8000 seems optimal
 
 
 # Working file paths
@@ -66,7 +65,7 @@ text_path = os.path.join(path, "text", mediaName + ".txt") # path to save transc
 # Creating temporary directory for images
 try:
     os.mkdir(".images")
-except: pass
+except: pass # folder already exists, occurs during testing
 image_path = os.path.join(path, ".images")
 
 # Initalizing the DeepSpeech model and processing speech
