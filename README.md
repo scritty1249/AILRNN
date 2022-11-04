@@ -5,3 +5,6 @@ This is a small, work in progress project of mine written mostly for hobby purpo
 #### DeepSpeech (GPU) v0.9.3 - https://github.com/mozilla/DeepSpeech/tree/v0.9.3
 #### TensorFlow (GPU) v2.3.0 - https://github.com/tensorflow/tensorflow/tree/v2.3.0-rc2
 #### PySceneDetect - https://github.com/Breakthrough/PySceneDetect
+
+### Work in progress name
+Adopted (not my models) Image Recognition & Language Neural Network
