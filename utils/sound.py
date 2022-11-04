@@ -74,7 +74,7 @@ class Transcript(object):
         if self._speech is None: self.__call__()
         total_len = len(list(self._speech))
         processed = 0
-        with open(filename, 'w') as f:
+        with open(filename + ".txt", 'w') as f:
             for text, time in self._speech:
                 if not callback is None: callback(total_complete = processed, total_length = total_len)
                 f.write("%s [%s - %s]\n" % (text, time[0], time[1]))
