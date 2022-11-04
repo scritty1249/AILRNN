@@ -12,6 +12,15 @@
     # The GPU capable builds (Python, NodeJS, C++, etc) depend on CUDA 10.1 and CuDNN v7.6.
     # https://deepspeech.readthedocs.io/en/r0.9/USING.html#cuda-dependency-inference
 
+# TODO:
+#   - trim larger videos into smaller chunks to avoid memory leaks(?)
+# ! - pickle Transcript object for faster testing
+#   - add working progress bar
+#   - add UI
+#   - add confidence value(?)
+#   - significant terms highlighting
+#   - codec conversion / media file fixing (example: add moov atom if missing)
+
 import os
 from shutil import rmtree
 from utils.sound import WAV, Transcript
@@ -51,7 +60,7 @@ def test_callback(total_complete, total_length): # Broken, doesnt even work prop
     else:
         print("\r%s / %s" % (total_complete, total_length), end="", flush=True)
         
-# TODO: use ffmpeg-based module to trim larger videos into smaller chunks to avoid memory leaks(?)
+# Use ffmpeg-based module to trim larger videos into smaller chunks to avoid memory leaks(?)
 # transcription chunking seems to break with any videos longer than 3 minutes...
 mediaName = "CISC310_Trim" 
 interval = 600 # supposed to be in milliseconds, 8000ms seems optimal
@@ -97,7 +106,7 @@ print("Saving to pdf")
 pdf = Notes(image_path)
 pdf.write_scenes(images, speech)
 pdf.save(pdf_path)
-print("Saved.")
+print("Saved to %s" % pdf_path)
 
 # Cleaning up temporary image directory, with the images
 rmtree(".images")
