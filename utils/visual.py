@@ -7,7 +7,7 @@ def get_scene_cuts(filename: str, threshold = 27.0, callback = False):
     Args:
         filename (str): The path to the video file.
         threshold (float, optional): Threshold value for scene detection. Defaults to 27.0.
-        callback (bool, optional): _description_. Defaults to False.
+        callback (bool, optional): Enables the callback feature of each algorithm used. Defaults to False.
 
     Returns:
         frame_nums (list[int | None]): A list of frame numbers denoting the start of each scene. If the scene detection fails, this can be empty.
@@ -22,7 +22,7 @@ def get_scene_rolling(filename: str, threshold = 3.0, callback = False):
     Args:
         filename (str): The path to the video file.
         threshold (float, optional): Threshold value for scene detection. Defaults to 3.0.
-        callback (bool, optional): _description_. Defaults to False.
+        callback (bool, optional): Enables the callback feature of each algorithm used. Defaults to False.
 
     Returns:
         frame_nums (list[int | None]): A list of frame numbers denoting the start of each scene. If the scene detection fails, this can be empty.
@@ -37,7 +37,7 @@ def get_scene_thresh(filename: str, threshold = 12.0, callback = False):
     Args:
         filename (str): The path to the video file.
         threshold (float, optional): Threshold value for scene detection. Defaults to 12.0.
-        callback (bool, optional): _description_. Defaults to False.
+        callback (bool, optional): Enables the callback feature of each algorithm used. Defaults to False.
 
     Returns:
         frame_nums (list[int | None]): A list of frame numbers denoting the start of each scene. If the scene detection fails, this can be empty.
@@ -53,12 +53,13 @@ def get_scenes(filename: str, content_threshold = 27.0, adaptive_threshold = 3.0
 
     Args:
         filename (str): The path to the video file.
+        interval (int, optional): Interval of frames to return by default if all algorithms fail, in seconds. Defaults to 10.
+        callback (bool, optional): Enables the callback feature of each algorithm used. Defaults to False.
+        
         content_threshold (float, optional): Threshold value for the content scene detection algorithm. Defaults to 27.0.
         adaptive_threshold (float, optional): Threshold value for the adaptive scene detection algorithm. Defaults to 3.0.
         thresh_threshold (float, optional): Threshold value for the threshold scene detection algorithm. Defaults to 12.0.
-        interval (int, optional): Interval of frames to return by default if all algorithms fail, in seconds. Defaults to 10.
-        callback (bool, optional): Enables the callback feature of each algorithm used. Defaults to False.
-
+        
     Returns:
         frame_list (list[int]): A list of frames at the start of each significant scene.
     """

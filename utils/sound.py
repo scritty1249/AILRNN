@@ -14,9 +14,12 @@ class WAV(object):
     Attributes:
         filename (str): The base name of the file, with the file extension.
         location (str): The full path of the video file.
+        
         rate (int): The framerate of the generated waveform.
         frames (int): The number of frames in the generated waveform.
+        
         buffer (bytes): The buffer frame data in the generated waveform.
+        
         file (pydub.AudioSegment): AudioSegment created of waveform from the video file.
     """
     def __init__(self, filename):

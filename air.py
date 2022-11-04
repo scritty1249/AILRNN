@@ -25,7 +25,7 @@ from deepspeech import Model
 # Deepspeech lanugage model constants (specified in https://github.com/mozilla/DeepSpeech/releases)
 lang_model = {"alpha": 0.931289039105002, "beta": 1.1834137581510284}
 
-def init_DeepSpeech(mdl_path: str, lang_path: str):
+def init_DeepSpeech(model_path: str, lang_path: str):
     """Initalizes a preset DeepSpeech Model.
 
     Args:
@@ -35,7 +35,7 @@ def init_DeepSpeech(mdl_path: str, lang_path: str):
     Returns:
         deepspeech.Model: The initialized Model.
     """
-    model = Model(mdl_path)
+    model = Model(model_path)
     model.enableExternalScorer(lang_path)
     return model
 
@@ -51,8 +51,8 @@ def test_callback(total_complete, total_length):
     else:
         print("\r%s / %s" % (total_complete, total_length), end="", flush=True)
 
-mediaName = "sample"
-interval = 8 * 1000 # in milliseconds, 8000 seems optimal
+mediaName = "Jordan-Peterson-sample"
+interval = 8 * 1000 # supposed to be in milliseconds, 8000 seems optimal
 
 
 # Working file paths
@@ -65,7 +65,7 @@ text_path = os.path.join(path, "text", mediaName + ".txt") # path to save transc
 # Creating temporary directory for images
 try:
     os.mkdir(".images")
-except: pass # folder already exists, occurs during testing
+except: pass
 image_path = os.path.join(path, ".images")
 
 # Initalizing the DeepSpeech model and processing speech
