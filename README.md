@@ -6,5 +6,5 @@ This is a small, work in progress project of mine written mostly for hobby purpo
 #### TensorFlow (GPU) v2.3.0 - https://github.com/tensorflow/tensorflow/tree/v2.3.0-rc2
 #### PySceneDetect - https://github.com/Breakthrough/PySceneDetect
 
-### Work in progress name
+## Work in progress name
 Adopted (not my models) Image Recognition & Language Neural Network
